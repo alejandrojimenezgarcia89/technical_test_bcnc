@@ -6,7 +6,7 @@ spring:
   datasource:
     url: jdbc:h2:mem:ecommerce
     username: sa
-    password: password
+    password: ${password_h2}
     driverClassName: org.h2.Driver
 #  jpa:
 ##    defer-datasource-initialization: true
