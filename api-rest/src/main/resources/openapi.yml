@@ -1,0 +1,60 @@
+openapi: 3.0.0
+info:
+  title: Price Service API
+  description: API to consult product prices.
+  version: 1.0.0
+paths:
+  /price:
+    get:
+      summary: Get highest priority price
+      description: Gets the price for a product and brand on a specific date.
+      operationId: getHighestPriorityPrice
+      parameters:
+        - name: productId
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: brandId
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: applicationDate
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: Price found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceResponseDTO'
+        '404':
+          description: Price not found
+components:
+  schemas:
+    PriceResponseDTO:
+      type: object
+      properties:
+        productId:
+          type: integer
+        brandId:
+          type: integer
+        priceList:
+          type: integer
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        price:
+          type: number
+          format: double
+        currency:
+          type: string
