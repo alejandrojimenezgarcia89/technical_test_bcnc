@@ -32,12 +32,4 @@ class PriceRepositoryAdapterTest {
         var foundPrice = this.priceRepositoryAdapter.findApplicablePrice(1, 1, OffsetDateTime.now());
         assertEquals(foundPrice, highestPriorityPrice);
     }
-
-//    @Test
-//    void notFoundApplicablePrice() {
-//        when(jdbcPriceRepository.findHighestPriorityPrice(anyLong(), anyInt(), any(OffsetDateTime.class))).thenReturn(Optional.empty());
-//        Executable test = ()->this.priceRepositoryAdapter.findApplicablePrice(1, 1, OffsetDateTime.now());
-//        assertThrows(PriceNotFoundException.class, test);
-//
-//    }
 }

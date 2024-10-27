@@ -1,9 +1,8 @@
 package com.technicaltest.bcnc.adapter;
 
 import com.technicaltest.bcnc.entity.Price;
-import com.technicaltest.bcnc.exception.PriceNotFoundException;
-import com.technicaltest.bcnc.repository.PriceRepository;
 import com.technicaltest.bcnc.repository.JdbcPriceRepository;
+import com.technicaltest.bcnc.repository.PriceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
